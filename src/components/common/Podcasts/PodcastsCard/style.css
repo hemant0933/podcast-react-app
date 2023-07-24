@@ -1,0 +1,30 @@
+.podcast_Card{
+    width: 250px;
+    height: 250px;
+
+    background: linear-gradient(
+        177.7deg,
+        rgba(58, 129, 191,0.3) 1.63%,
+        rgba(65, 48, 90, 0.009) 148.18% 
+    );
+    border-radius: 2rem;
+    padding: 0.5rem;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.podcast_Card:hover{
+    opacity: 1;
+    transition: all 0.3s;
+}
+.displayImgPodcast{
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+}
+.title_podcast{
+    color: var(--white);
+    text-decoration: none;
+    margin: 0.5rem 0;
+
+}
