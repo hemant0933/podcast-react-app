@@ -1,14 +1,15 @@
 .podcast_Card{
-    width: 250px;
+    width: 280px;
     height: 250px;
-
-    background: linear-gradient(
+  
+    background: var(--theme);
+    /* background: linear-gradient(
         177.7deg,
         rgba(58, 129, 191,0.3) 1.63%,
         rgba(65, 48, 90, 0.009) 148.18% 
-    );
+    ); */
     border-radius: 2rem;
-    padding: 0.5rem;
+    padding: 1rem;
     opacity: 0.7;
     cursor: pointer;
 }
@@ -26,5 +27,10 @@
     color: var(--white);
     text-decoration: none;
     margin: 0.5rem 0;
-
+    padding: 0.5rem;
+}
+.playIcon{
+    color: var(--white);
+    margin: 0.5rem 0;
+    padding: 0.5rem;
 }

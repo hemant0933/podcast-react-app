@@ -15,7 +15,8 @@ body{
     font-family: 'Ysabeau Infant', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: var(--theme);
+    /* background: var(--theme); */
+    background-image: linear-gradient(to right, #3ab5b0 0%, #3d99be 31%, #56317a 100%);
     color: var(--white);
 }
 
