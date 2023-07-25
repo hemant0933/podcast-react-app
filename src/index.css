@@ -99,3 +99,15 @@ input{
 .podcast_desc{
     color: var(--purple-grey);
 }
+
+.avatar{
+    width: 10%;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+.avatar:hover{
+    transform: scale(1.2);
+    transition: all 400ms;
+    cursor: pointer;
+    opacity: 1;
+}
