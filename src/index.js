@@ -1,7 +1,6 @@
 import React from "react";
 import { createRoot } from 'react-dom/client';
 import "./index.css";
-// import ReactDOM from "react-dom";
 import App from "./App";
 import { Provider } from "react-redux";
 import store from "./store";
@@ -13,7 +12,9 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
   <Provider store={store}>
-    <App />
+   {/* <PersistGate > */}
+     <App />
+   {/* </PersistGate> */}
   </Provider>
 </React.StrictMode>,
 

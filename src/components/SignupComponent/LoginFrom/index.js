@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import InputComponent from '../../common/input';
 import Button from '../../common/Button';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import {  signInWithEmailAndPassword } from 'firebase/auth';
 import {auth, db} from "../../../firebase";
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -18,11 +18,11 @@ const LoginFrom = () => {
     const navigate = useNavigate();
 
     const handleLogin = async () => {
-        console.log("Handling Login...");
 
        if(email && password){
         try{
           setLoading(true)
+          // await setPersistence(auth,browserSessionPersistence)
           const useCredential = await signInWithEmailAndPassword(
             auth,
             email,
@@ -32,7 +32,7 @@ const LoginFrom = () => {
 
           const userDoc = await getDoc(doc(db, 'users', user.uid));
           const userData = userDoc.data(); 
-          console.log("userData", userData);
+          // console.log("userData", userData);
 
           dispatch(
             setUser({

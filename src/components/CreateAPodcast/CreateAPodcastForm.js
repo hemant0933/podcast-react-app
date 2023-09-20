@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+// import { useDispatch } from 'react-redux';
+// import { useNavigate } from 'react-router-dom';
 import InputComponent from '../common/input';
 import Button from '../common/Button';
 import { toast } from 'react-toastify';
@@ -18,8 +18,8 @@ const CreateAPodcastForm = () => {
     
     const [loading, setLoading] =useState(false);
   
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
+    // const navigate = useNavigate();
+    // const dispatch = useDispatch();
 
     const handleSubmit = async () => {
         if(title && desc && displayImage && bannerImage){
@@ -54,7 +54,7 @@ const CreateAPodcastForm = () => {
                         displayImageUrl: displayImageUrl,
                         createdBy: auth.currentUser.uid,
                     };
-                const docRef = await addDoc(collection(db,"podcasts"),podcastData)
+                   await addDoc(collection(db,"podcasts"),podcastData)
                 
                     // Redirect to the podcast details page
                     setTitle("");

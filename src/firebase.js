@@ -16,10 +16,9 @@ const firebaseConfig = {
   projectId: "podcast-app-e4604",
   storageBucket: "podcast-app-e4604.appspot.com",
   messagingSenderId: "918256059698",
-  appId: "1:918256059698:web:417a5a32fa770eaf4e032b",
-  measurementId: "G-0ECB4648M2"
+  appId: "1:918256059698:web:81776cd3ab7a2e8a4e032b",
+  measurementId: "G-X3FFB0592X"
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);

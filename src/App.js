@@ -38,7 +38,7 @@ const App = () => {
             }
           },
           (error) => {
-            console.log("Error fetching user data: ", error);
+            console.log("Error fetching user data: ", error.code);
           }
         );
         return () => {
@@ -50,7 +50,7 @@ const App = () => {
     return () => {
       unsubscribeAuth();
     };
-  }, []);
+  }, [])  // eslint-disable-line
 
   return (
     <div className="app">

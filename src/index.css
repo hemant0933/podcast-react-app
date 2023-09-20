@@ -3,11 +3,11 @@
 /* font-family: 'Poppins', sans-serif;
 font-family: 'Ysabeau Infant', sans-serif; */
 :root{
-    --theme: #20062e;
+    --theme: #30363d;
     --blue: #18b2de;
-    --white: #ffff;
-    --grey: #d7d7d7;
-    --purple-grey: #8f8297;
+    --white: #ACBCFF;
+    --grey: #F6FFA6;
+    --purple-grey: #252B48;
 }
 
 body{
@@ -15,10 +15,14 @@ body{
     font-family: 'Ysabeau Infant', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* background: var(--theme); */
-    background-image: linear-gradient(to right, #3ab5b0 0%, #3d99be 31%, #56317a 100%);
+    background: var(--theme);
+    /* background-image: linear-gradient(25deg, #00073a, #562b52, #a1516b, #f17c83); */
     color: var(--white);
 }
+
+/* .bggradient{
+    background-image: linear-gradient(25deg, #24c3ce, #89b3b8, #b7a0a3, #da8b8e)
+} */
 
 input{
     font-family: 'Ysabeau Infant', sans-serif;

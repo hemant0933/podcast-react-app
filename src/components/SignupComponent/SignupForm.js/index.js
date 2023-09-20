@@ -3,7 +3,7 @@ import InputComponent from "../../common/input";
 import Button from "../../common/Button";
 
 import { auth, db, storage } from "../../../firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {createUserWithEmailAndPassword} from "firebase/auth";
 
 import { doc, setDoc } from "firebase/firestore";
 import { useDispatch } from "react-redux";
@@ -26,18 +26,10 @@ const SignupForm = () => {
 
   const handleSignUp = async () => {
     setLoading(true);
-    console.log("Handling Signup...");
+    // console.log("Handling Signup...");
     if (password === confirmPassword && password.length >= 6 && avatar) {
       try {
-        // upload file -->  get downloadable links
-        const avatarRef = ref(
-          storage,
-          `profile/${auth.currentUser.uid}/${Date.now()}`
-        )
-        await uploadBytes(avatarRef, avatar);
-        // console.log( uploaded);  
-        const avatarUrl = await getDownloadURL(avatarRef);
-        // Creating a new user
+         // Creating a new user
         const useCredential = await createUserWithEmailAndPassword(
           auth,
           email,
@@ -46,14 +38,23 @@ const SignupForm = () => {
         );
         const user = useCredential.user;
         // console.log("User", user);
-
-        //Saving user details to firebase
+        // upload file -->  get downloadable links
+        const avatarRef = ref(
+          storage,
+          `profile/${auth.currentUser.uid}/${Date.now()}`
+        )
+        await uploadBytes(avatarRef, avatar);
+        // console.log( uploaded);  
+        const avatarUrl = await getDownloadURL(avatarRef);
+      
+        // Save the user's details to a Firestore collection
         await setDoc(doc(db, "users", user.uid), {
           name: fullName,
           email: user.email,
           uid: user.uid,
           avatar:avatarUrl,
         });
+       
         //saving data in the redux, call the redux action
         dispatch(
           setUser({
@@ -67,7 +68,7 @@ const SignupForm = () => {
         navigate("/profile");
       } catch (err) {
           setLoading(false);
-          console.error("Error", err);
+          console.error("Error", err.message);
           toast.error(err.message, {
             position: "top-right",
             autoClose: 5000,

@@ -15,15 +15,15 @@ const PodcastDetails = () => {
   const [episodes, setEpisodes] = useState("");
   const [PlayingFile, setPlayingFile] = useState();
 
-  console.log("ID", id);
+  // console.log("ID", id);
 
-  console.log(podcast);
+  // console.log(podcast);
 
   useEffect(() => {
     if (id) {
       getData();
     }
-  }, [id]);
+  }, [id]); // eslint-disable-line
 
   const getData = async () => {
     try {

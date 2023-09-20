@@ -55,7 +55,6 @@ const Profile = () => {
     }
 
     //Update user Data in firestore
-
     const userDoc = doc(db, "users", auth.currentUser.uid);
     await updateDoc(userDoc, {
       name: newName,
@@ -81,21 +80,29 @@ const Profile = () => {
       const userData = await getDoc(userDoc);
       if (userData.exists()) {
         setAvatar(userData.data().avatar);
+         // Store user data in local storage
+      localStorage.setItem('user', JSON.stringify(userData.data()));
       }
     };
     getUserData();
-  });
+  },[]);     //eslint-disable-line
+  useEffect(() => {
+    // Get user data from local storage
+    const storedUserData = localStorage.getItem('user');
+    if (storedUserData) {
+      dispatch(setUser(JSON.parse(storedUserData)));
+    }
+  }, []);  //eslint-disable-line
 
   if (!user) {
     return <Loader />;
   }
-  console.log(user);
+  // console.log(user);
 
   if (Isedit) {
     return (
       <div>
         <Header />
-
         <div className="wrapper">
           <h1>Update User Data</h1>
           <InputComponent
@@ -130,8 +137,8 @@ const Profile = () => {
       <Header />
       <div className="wrapper">
         <img src={avatar} className="avatar" alt="profile" />
-        <h1 style={{ textTransform: "capitalize" }}>{user.name}</h1>
-        <h1>{user.email}</h1>
+        <h1 style={{ textTransform: "capitalize" }}>{user && user.name}</h1>
+        <h1>{user && user.email}</h1>
         {/* <h1>{user.uid}</h1> */}
         <Button text={"Edit"} onClick={handleEdit} />
         <Button text={"Logout"} onClick={handleLogout} />
