@@ -12,7 +12,7 @@
 }
 .links a {
   font-size: 1.1rem;  
-  color: var(--grey);
+  color: var(--neongreen);
   text-decoration: none !important;
   font-family: 500;
 }

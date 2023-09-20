@@ -137,11 +137,12 @@ const Profile = () => {
       <Header />
       <div className="wrapper">
         <img src={avatar} className="avatar" alt="profile" />
-        <h1 style={{ textTransform: "capitalize" }}>{user && user.name}</h1>
-        <h1>{user && user.email}</h1>
-        {/* <h1>{user.uid}</h1> */}
-        <Button text={"Edit"} onClick={handleEdit} />
-        <Button text={"Logout"} onClick={handleLogout} />
+        <p style={{ textTransform: "capitalize" }}>User Name :- {user && user.name}</p>
+        <p>Email :- {user && user.email}</p>
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+            <Button width="100px" text={"Edit"} onClick={handleEdit} />
+            <Button width="100px" text={"Logout"} onClick={handleLogout} />
+          </div>
       </div>
     </div>
   );

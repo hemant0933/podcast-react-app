@@ -86,7 +86,7 @@ const AudioPlayer = ({ audioSrc, image }) => {
   }, [isMute]);
   return (
     <div className="custom-audio-Player">
-      <div className="blob"></div>
+      {/* <div className="blob"></div> */}
       <img src={image} className="display-image-player" alt="audioImage" />
       <audio ref={audioRef} src={audioSrc} />
       <p className="audio-btn" onClick={togglePlay}>

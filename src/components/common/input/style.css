@@ -1,7 +1,7 @@
 .custom-input{
-    background: var(--theme);
-    color: var(--white);
-    border: 2px solid var(--purple-grey);
+    background: var(--field);
+    color: var(--textField);
+    border: 2px solid var(--greyScale);
     border-radius: 0.25rem;
     padding: 1rem;
     font-size: 1rem;
@@ -11,13 +11,15 @@
 }
 .custom-input :focus{
     outline: none;
-    border-color: var(--white);
+    border-color: var(--greyScale1);
+    
 }
 .custom-input ::placeholder{
-    color: var(--purple-grey);
+    color: var(--greyScale2);
+    border-style: dashed;
 }
 .label-input{
-    color: var(--purple-grey);
+    color: var(--greyScale2);
 }
 .active{
     border-color: var(--white);
