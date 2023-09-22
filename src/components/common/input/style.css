@@ -1,6 +1,6 @@
 .custom-input{
     background: var(--field);
-    color: var(--textField);
+    color: var(--white);
     border: 2px solid var(--greyScale);
     border-radius: 0.25rem;
     padding: 1rem;
@@ -11,7 +11,7 @@
 }
 .custom-input :focus{
     outline: none;
-    border-color: var(--greyScale1);
+    border-color: var(--greyScale2);
     
 }
 .custom-input ::placeholder{
