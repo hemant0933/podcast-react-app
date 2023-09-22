@@ -12,7 +12,7 @@ const Signup = () => {
   return (
     <div className='outer_wrapper'>
      {/* <Header/> */}
-     <div className='input_Wrapper'>
+     <div className='input_Wrapper2'>
      <div className='box1'>
      {!flag ? <h1>Signup</h1> : <h1>Login</h1>}
       {!flag ? <SignupForm/> : <LoginFrom/>}

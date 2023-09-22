@@ -33,22 +33,26 @@ input {
 }
 
 .input_Wrapper {
-  width: 100%;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin: 0 auto;
   margin-top: 2rem;
+  padding: 0 50px;
+}
+.input_Wrapper2{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 0 50px;
 }
 
-@media (max-width: 1000px) {
-  .input_Wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-}
 
 .box1{
   width: 30%;
